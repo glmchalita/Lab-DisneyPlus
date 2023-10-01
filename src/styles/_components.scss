@@ -1,0 +1,54 @@
+@use "vars";
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Bold.woff2);
+  font-weight: 700;
+}
+
+@mixin text($fontSize) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: vars.$textPrimary;
+}
+
+@mixin title($fontSize) {
+  @include text($fontSize);
+  color: vars.$textSecondary;
+}
+
+.text--lg {
+  @include text(18px);
+}
+
+.text--md {
+  @include text(16px);
+}
+
+.text--sm {
+  @include text(12px);
+}
+
+.title--lg {
+  @include title(44px);
+}
+
+.title--md {
+  @include title(40px);
+}
+
+.title--sm {
+  @include title(28px);
+}
+
+.link-text {
+  @include text(18px);
+  color: vars.$textSecondary;
+  text-decoration: underline;
+}
