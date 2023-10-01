@@ -4,6 +4,7 @@
 @use "hero";
 @use "shows";
 @use "plans";
+@use "devices";
 
 body {
   background-color: vars.$bgColor;
