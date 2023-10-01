@@ -2,6 +2,7 @@
 @use "vars";
 @use "components";
 @use "hero";
+@use "shows";
 
 body {
   background-color: vars.$bgColor;
