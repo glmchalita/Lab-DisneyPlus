@@ -52,3 +52,17 @@
   color: vars.$textSecondary;
   text-decoration: underline;
 }
+
+.button {
+  display: block;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: vars.$textSecondary;
+  background-color: vars.$btnSignin;
+  border: none;
+  border-radius: 4px;
+  margin-top: 2vw;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
