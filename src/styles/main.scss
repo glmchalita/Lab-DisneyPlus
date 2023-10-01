@@ -1,3 +1,8 @@
 @use "reset";
 @use "vars";
 @use "components";
+@use "hero";
+
+body {
+  background-color: vars.$bgColor;
+}
