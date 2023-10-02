@@ -5,6 +5,8 @@
 @use "shows";
 @use "plans";
 @use "devices";
+@use "faq";
+@use "footer";
 
 body {
   background-color: vars.$bgColor;
