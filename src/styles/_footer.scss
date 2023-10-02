@@ -1,13 +1,63 @@
+@use "vars";
+
 .footer {
+  padding: 26px 8px;
+
   &__container {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 20px;
   }
 
   &__logo {
     width: 80px;
     margin: 0 auto 10px;
+  }
+
+  &__links {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      display: inline-block;
+
+      &__language {
+        display: flex;
+        align-items: center;
+
+        select {
+          background-color: transparent;
+          border: none;
+          color: vars.$textPrimary;
+          height: 38px;
+
+          &:hover {
+            color: vars.$textSecondary;
+          }
+        }
+
+        option {
+          color: vars.$bgColor;
+        }
+      }
+
+      &__link {
+        display: block;
+        padding: 8px 16px;
+
+        &:hover {
+          color: vars.$textSecondary;
+        }
+      }
+    }
+  }
+
+  &__disclaimer {
+    margin-bottom: 16px;
   }
 }
