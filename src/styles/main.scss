@@ -1,0 +1,14 @@
+@use "reset";
+@use "vars";
+@use "components";
+@use "hero";
+@use "shows";
+@use "plans";
+@use "devices";
+@use "faq";
+@use "footer";
+@use "header";
+
+body {
+  background-color: vars.$bgColor;
+}

@@ -1,0 +1,167 @@
+@use "vars";
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Avenir;
+  src: url(../../assets/fonts/Avenir-Bold.woff2);
+  font-weight: 700;
+}
+
+@mixin text($fontSize) {
+  font-size: $fontSize;
+  line-height: $fontSize + 10px;
+  color: vars.$textPrimary;
+}
+
+@mixin title($fontSize) {
+  @include text($fontSize);
+  color: vars.$textSecondary;
+}
+
+.text--lg {
+  @include text(18px);
+
+  @media (max-width: 768px) {
+    @include text(15px);
+  }
+}
+
+.text--md {
+  @include text(16px);
+
+  @media (max-width: 768px) {
+    @include text(14px);
+  }
+}
+
+.text--sm {
+  @include text(12px);
+
+  @media (max-width: 768px) {
+    @include text(11px);
+  }
+}
+
+.title--lg {
+  @include title(44px);
+
+  @media (max-width: 768px) {
+    @include title(26px);
+  }
+}
+
+.title--md {
+  @include title(40px);
+
+  @media (max-width: 768px) {
+    @include title(24px);
+  }
+}
+
+.title--sm {
+  @include title(28px);
+
+  @media (max-width: 768px) {
+    @include title(22px);
+  }
+}
+
+.link-text {
+  @include text(18px);
+  color: vars.$textSecondary;
+  text-decoration: underline;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  padding: 8px 14px;
+  letter-spacing: 1px;
+  color: vars.$textSecondary;
+  background-color: vars.$btnPrimary;
+  border: 1px solid vars.$btnPrimary;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: lighten(vars.$btnPrimary, 3%);
+  }
+
+  cursor: pointer;
+
+  &--secondary {
+    background-color: vars.$btnSecondary;
+    border-color: vars.$btnSecondary;
+
+    &:hover {
+      background-color: lighten(vars.$btnSecondary, 3%);
+    }
+  }
+
+  &--transparent {
+    background-color: vars.$btnTransparent;
+    border-color: vars.$textSecondary;
+
+    &:hover {
+      background-color: vars.$textSecondary;
+      color: vars.$bgColor;
+    }
+  }
+}
+
+.img-text-section {
+  padding: 5.6vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  &__content {
+    padding: 0 2vw;
+
+    &__title {
+      margin-bottom: 24px;
+    }
+  }
+
+  &--img-w100 {
+    display: block;
+    position: relative;
+
+    &__img {
+      width: 100%;
+    }
+
+    &__content {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: calc(50% - 5.6vw);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
