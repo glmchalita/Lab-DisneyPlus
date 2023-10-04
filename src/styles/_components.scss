@@ -25,26 +25,50 @@
 
 .text--lg {
   @include text(18px);
+
+  @media (max-width: 768px) {
+    @include text(15px);
+  }
 }
 
 .text--md {
   @include text(16px);
+
+  @media (max-width: 768px) {
+    @include text(14px);
+  }
 }
 
 .text--sm {
   @include text(12px);
+
+  @media (max-width: 768px) {
+    @include text(11px);
+  }
 }
 
 .title--lg {
   @include title(44px);
+
+  @media (max-width: 768px) {
+    @include title(26px);
+  }
 }
 
 .title--md {
   @include title(40px);
+
+  @media (max-width: 768px) {
+    @include title(24px);
+  }
 }
 
 .title--sm {
   @include title(28px);
+
+  @media (max-width: 768px) {
+    @include title(22px);
+  }
 }
 
 .link-text {
@@ -99,6 +123,10 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
 
+  @media (max-width: 768px) {
+    display: block;
+  }
+
   &__img {
     max-width: 100%;
   }
@@ -128,6 +156,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @media (max-width: 768px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+      }
     }
   }
 }
