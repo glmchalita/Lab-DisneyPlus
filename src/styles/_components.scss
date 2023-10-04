@@ -54,17 +54,43 @@
 }
 
 .button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 60px;
   font-size: 18px;
+  padding: 8px 14px;
+  letter-spacing: 1px;
   color: vars.$textSecondary;
-  background-color: vars.$btnSignin;
-  border: none;
+  background-color: vars.$btnPrimary;
+  border: 1px solid vars.$btnPrimary;
   border-radius: 4px;
-  margin-top: 2vw;
-  margin-bottom: 8px;
+
+  &:hover {
+    background-color: lighten(vars.$btnPrimary, 3%);
+  }
+
   cursor: pointer;
+
+  &--secondary {
+    background-color: vars.$btnSecondary;
+    border-color: vars.$btnSecondary;
+
+    &:hover {
+      background-color: lighten(vars.$btnSecondary, 3%);
+    }
+  }
+
+  &--transparent {
+    background-color: vars.$btnTransparent;
+    border-color: vars.$textSecondary;
+
+    &:hover {
+      background-color: vars.$textSecondary;
+      color: vars.$bgColor;
+    }
+  }
 }
 
 .img-text-section {

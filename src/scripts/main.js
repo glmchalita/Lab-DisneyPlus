@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll("[data-tab-button]");
   const questions = document.querySelectorAll("[data-faq-question]");
 
+  const heroSection = document.querySelector(".hero");
+  const heroHeight = heroSection.clientHeight;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY < heroHeight) {
+      hideHeader();
+    } else {
+      showHeader();
+    }
+  });
+
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function (button) {
       const targetTab = button.target.dataset.tabButton;
@@ -38,4 +49,14 @@ function toggleFaq(element) {
   const openClass = "faq__questions__item--is-open";
   const parent = element.target.parentNode;
   parent.classList.toggle(openClass);
+}
+
+function hideHeader() {
+  const header = document.querySelector("header");
+  header.classList.add("header--is-hidden");
+}
+
+function showHeader() {
+  const header = document.querySelector("header");
+  header.classList.remove("header--is-hidden");
 }
