@@ -16,10 +16,10 @@ function compress_img() {
 }
 
 function compress_js() {
-  return gulp.src("./source/scripts/*.js").pipe(uglify()).pipe(obfuscate()).pipe(gulp.dest("./build/scripts"));
+  return gulp.src("./src/scripts/*.js").pipe(uglify()).pipe(obfuscate()).pipe(gulp.dest("./dist/scripts"));
 }
 
-exports.default = gulp.parallel(compile_sass, compress_img);
+exports.default = gulp.parallel(compile_sass, compress_img, compress_js);
 exports.watch = function () {
   gulp.watch("./src/styles/*.scss", gulp.parallel(compile_sass));
 };
